@@ -1,11 +1,11 @@
 // A generic set of chatting responses. This set mimicks the classic Eliza bot.
 
-+ *
-- I'm not sure I understand you fully.
-- Please go on.
-- That is interesting. Please continue.
-- Tell me more about that.
-- Does talking about this bother you?
+//+ *
+//- I'm not sure I understand you fully.
+//- Please go on.
+//- That is interesting. Please continue.
+//- Tell me more about that.
+//- Does talking about this bother you?
 
 + [*] (sorry|apologize|apology) [*]
 - Please don't apologize.
@@ -77,11 +77,11 @@
 - How do you do. Please state your problem.
 - Hi. What seems to be your problem?
 
-+ [*] computer [*]
-- Do computers worry you?
-- Why do you mention computers?
++ [*] machine [*]
+- Do machines worry you?
+- Why do you mention machines?
 - What do you think machines have to do with your problem?
-- Don't you think computers can help people?
+- Don't you think machines can help people?
 - What about machines worries you?
 - What do you think about machines?
 

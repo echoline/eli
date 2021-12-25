@@ -92,9 +92,11 @@ func main() {
 	for {
 		text, _ := reader.ReadString('\n')
 
-		reply, _ := bot.Reply("username", text)
+		if len(strings.TrimSpace(text)) > 0 {
+			reply, _ := bot.Reply("client username goes here", text)
 
-		fmt.Println(reply)
+			fmt.Println(reply)
+		}
 	}
 }
 
