@@ -239,7 +239,7 @@
 + [*] my (mom|dad|mother|father|bro|brother|sis|sister|cousin|aunt|uncle) *
 - Tell me more about your family.
 - Who else in your family <star2>?
-- Your <star>?
+- Your <star> <star2>?
 - What else comes to mind when you think of your <star>?
 
 + can you *
