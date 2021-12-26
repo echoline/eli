@@ -93,7 +93,7 @@ func main() {
 		text, _ := reader.ReadString('\n')
 
 		if len(strings.TrimSpace(text)) > 0 {
-			reply, _ := bot.Reply("client username goes here", text)
+			reply, _ := bot.Reply("client username goes here, does not affect learned.rive", text)
 
 			fmt.Println(reply)
 		}

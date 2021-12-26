@@ -6,6 +6,8 @@
         - {lowercase}{ok}{/lowercase}
 < begin
 
+! var xrs = ./replies/learned.rive
+
 // Substitutions
 ! sub &quot;    = "
 ! sub &apos;    = '
