@@ -2,11 +2,8 @@
 
 > begin
 	+ request
-	* <reply2> ne undefined => {lowercase}{ok}{/lowercase}<call>learn <bot xrs> {sentence}<input>.{/sentence}::::<reply2>::::silent</call>
         - {lowercase}{ok}{/lowercase}
 < begin
-
-! var xrs = ./replies/learned.rive
 
 // Substitutions
 ! sub &quot;    = "

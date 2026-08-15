@@ -18,11 +18,63 @@ func formatMessage(s string) string {
 	return s
 }
 
+func learn(rs *rivescript.RiveScript, args []string) string {
+	xrs := os.Getenv("HOME") + "/.config/rivescript/learned.rive";
+
+	if len(args) != 2 {
+		return "[err: learn args]"
+	}
+
+	if len(formatMessage(args[1])) == 0 {
+		return "[err: learn: no message found]"
+	}
+
+	file, err := os.Open(xrs)
+	found := false
+	contents := ""
+	if err == nil {
+		reader := bufio.NewReader(file)
+		for {
+			m := "+ " + formatMessage(args[1]) + "\n"
+			line, err := reader.ReadString('\n')
+		        if err != nil && err != io.EOF {
+				break
+			}
+
+			contents += line
+			if line == m {
+				found = true
+				contents += "- " + args[0] + "\n"
+			}
+
+			if err != nil {
+				break
+			}
+		}
+		file.Close()
+	}
+
+	if found == false {
+		contents += "\n+ " + formatMessage(args[1]) + "\n- " + args[0] + "\n"
+	}
+
+	data := []byte(contents)
+	err = ioutil.WriteFile(xrs, data, 0644)
+	if err != nil {
+		return "[err: writing to " + xrs + "]"
+	}
+
+	rs.LoadFile(xrs)
+	rs.SortReplies()
+
+	return ""
+}
+
 func main() {
 	bot := rivescript.New(nil)
 	reader := bufio.NewReader(os.Stdin)
 
-	err := bot.LoadDirectory("./replies/")
+	err := bot.LoadDirectory(os.Getenv("HOME") + "/.config/rivescript/")
 	if err != nil {
 		fmt.Printf("failed to load replies\n")
 		return
@@ -89,13 +141,22 @@ func main() {
 		return ""
 	})
 
-	for {
-		text, _ := reader.ReadString('\n')
+	text, _ := reader.ReadString('\n')
+	reply := "";
 
+	for {
 		if len(strings.TrimSpace(text)) > 0 {
-			reply, _ := bot.Reply("client username goes here, does not affect learned.rive", text)
+			reply, _ = bot.Reply(os.Getenv("USER"), text)
 
 			fmt.Println(reply)
+		}
+
+		text, _ = reader.ReadString('\n')
+		text = strings.TrimSpace(text)
+
+		if (len(text) > 0 && len(reply) > 0) {
+			args := []string{text, reply}
+			learn(bot, args)
 		}
 	}
 }
