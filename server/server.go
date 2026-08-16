@@ -141,7 +141,7 @@ func main() {
 
 		fd.Close()
 
-		fd, err := listener.Accept()
+		fd, err = listener.Accept()
 		if err != nil {
 			fmt.Println("unix socket accept failed")
 			return
