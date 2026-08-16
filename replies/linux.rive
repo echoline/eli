@@ -1,0 +1,79 @@
++ what is linux
+- It is the core kernel of an operating system. Complete systems bundle the kernel with utilities and user interfaces, known as distributions (distros).
+
++ is linux free
+- Yes. The source code is free to use, study, and change under the GNU General Public License.
+
++ what is a distribution
+- Popular versions like Linux Mint, Ubuntu, or Fedora package the Linux kernel with apps and desktop tools.
+
++ will linux run on my pc
+- Linux runs on almost all standard PC hardware, Intel, AMD, and ARM processors.
+
++ how do i use the terminal
+- Open the command-line interface to type text commands directly to the shell.
+- Type text commands here to run them in the shell.
+
++ commands
+- Tab-completion can help you complete command names in the shell - by pressing tab.
+
++ what are the command names
+@ commands
+
++ what are all [of] the commands
+@ commands
+
++ manual [page]
+- Try typing "man man" for the manual for the manual program - man.
+
++ how do i (use|run) *
+@ manual
+
++ how do i (use|run) the (command|program) *
+@ manual
+
++ what are the [basic] commands
+- Use "ls" to list files, "cd" to change folders, and "pwd" to see your current folder path.
+
++ how do i exit *
+- Sometimes a program can be cancelled by pressing ctrl+c, sometimes by pressing the escape key, or by typing :q.
+
++ ram
+- Try typing "free -m".
+
++ how much ram do i have
+@ ram
+
++ how much ram is (free|left|used)
+@ ram
+
++ how much ram is being used
+@ ram
+
++ how much ram is in use
+@ ram
+
++ how do i (check|see) how much ram i have
+@ ram
+
++ how do i (check|see) (my|the) ram
+@ ram
+
++ how much disk space is required
+- A basic install needs about 20 GB of free space.
+
++ disk
+- Try typing "df -h".
+
++ how much disk space do i have
+@ disk
+
++ how much disk space is (free|left)
+@ disk
+
++ how (big|large) is (my|the) disk
+@ disk
+
++ how much (ram|disk) [space] is (in|on) (this|the|my) (computer|system)
+@ <star>
+

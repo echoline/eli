@@ -1,0 +1,49 @@
++ what is your (name|hostname|designation)
+- <call>hostname</call>.
+- My name is <call>hostname</call>.
+- My hostname is <call>hostname</call>.
+- This computer's hostname is <call>hostname</call>.
+- This computer is called <call>hostname</call>.
+
++ (who|what) are you
+- I am a shell on this computer, <call>hostname</call>.
+- I am a talking shell.
+- I am the shell.
+- I am a shell.
+
++ time
+- <call>time</call>.
+- The time is <call>time</call>.
+- Right now it is <call>time</call>
+
++ what time is it [currently]
+@ time
+
++ what time is it [right] now
+@ time
+
++ what is the [current] time
+@ time
+
++ what is the time [right] now
+@ time
+
++ date
+- <call>date</call>.
+- Today is <call>date</call>.
+- Today's date is <call>date</call>.
+- The date is <call>date</call>.
+
++ what day is it [today]
+- <call>weekday</call>.
+@ date
+
++ what day of the week is it [today]
+- <call>weekday</call>
+
++ what is the (day|date) [today]
+@ date
+
++ what is the (day|date) [right] now
+@ date
+

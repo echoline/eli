@@ -84,62 +84,26 @@ func main() {
 
 	fmt.Println("loaded replies")
 
-	bot.SetSubroutine("time", func(rs *rivescript.RiveScript, args []string) string {
-		return time.Now().Format(time.RFC1123)
+	bot.SetSubroutine("date", func(rs *rivescript.RiveScript, args []string) string {
+		return time.Now().Format("Monday, January 2, 2006")
 	})
 
-	bot.SetSubroutine("today", func(rs *rivescript.RiveScript, args []string) string {
+	bot.SetSubroutine("weekday", func(rs *rivescript.RiveScript, args []string) string {
 		return time.Now().Weekday().String()
 	})
 
-	bot.SetSubroutine("learn", func(rs *rivescript.RiveScript, args []string) string {
-		xrs := args[0]
-		s := strings.Split(strings.Join(args[1:], " "), "::::")
-		if len(s) >= 2 {
-			if len(formatMessage(s[1])) == 0 {
-				return "[err: no message found]"
-			}
-			file, err := os.Open(xrs)
-			found := false
-			contents := ""
-			if err == nil {
-				reader := bufio.NewReader(file)
-				for {
-					m := "+ " + formatMessage(s[1]) + "\n"
-					line, err := reader.ReadString('\n')
-				        if err != nil && err != io.EOF {
-						break
-					}
-
-					contents += line
-					if line == m {
-						found = true
-						contents += "- " + s[0] + "\n"
-					}
-
-					if err != nil {
-						break
-					}
-				}
-				file.Close()
-			}
-			if found == false {
-				contents += "\n+ " + formatMessage(s[1]) + "\n- " + s[0] + "\n"
-			}
-			data := []byte(contents)
-			err = ioutil.WriteFile(xrs, data, 0644)
-			if err != nil {
-				return "error writing to " + xrs
-			}
-			bot.LoadFile(xrs)
-			bot.SortReplies()
-			if len(s) == 3 {
-				return ""
-			}
-			return "Okay, I'll try to remember to respond, \"" + s[0] + "\" when you say, \"" + s[1] + "\""
-		}
-		return ""
+	bot.SetSubroutine("time", func(rs *rivescript.RiveScript, args []string) string {
+		return time.Now().Format("3:04 PM")
 	})
+
+	bot.SetSubroutine("hostname", func(rs *rivescript.RiveScript, args []string) string {
+		hostname, err := os.Hostname()
+		if err != nil {
+			return "[err: " + err.Error() + "]"
+		}
+		return hostname
+	})
+
 
 	text, _ := reader.ReadString('\n')
 	reply := "";
