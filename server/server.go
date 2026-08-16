@@ -10,6 +10,7 @@ import (
 	"io/ioutil"
 	"io"
 	"regexp"
+	"net"
 )
 
 func formatMessage(s string) string {
@@ -72,17 +73,14 @@ func learn(rs *rivescript.RiveScript, args []string) string {
 
 func main() {
 	bot := rivescript.New(nil)
-	reader := bufio.NewReader(os.Stdin)
 
 	err := bot.LoadDirectory(os.Getenv("HOME") + "/.config/rivescript/")
 	if err != nil {
-		fmt.Printf("failed to load replies\n")
+		fmt.Println("failed to load replies")
 		return
 	}
 
 	bot.SortReplies()
-
-	fmt.Println("loaded replies")
 
 	bot.SetSubroutine("date", func(rs *rivescript.RiveScript, args []string) string {
 		return time.Now().Format("Monday, January 2, 2006")
@@ -104,19 +102,56 @@ func main() {
 		return hostname
 	})
 
+	os.Remove(os.Getenv("HOME") + "/.config/rivescript.socket")
+	listener, err := net.Listen("unix", os.Getenv("HOME") + "/.config/rivescript.socket")
+	if err != nil {
+		fmt.Printf("unix socket listen failed\n")
+		return
+	}
 
-	text, _ := reader.ReadString('\n')
+
+	fd, err := listener.Accept()
+	if err != nil {
+		fmt.Println("unix socket accept failed")
+		return
+	}
+
+	buf := make([]byte, 8192)
+	n, err := fd.Read(buf)
+	if err != nil {
+		fmt.Println("unix socket read failed")
+		return
+	}
+
+	text := strings.TrimSpace(string(buf[:n]))
 	reply := "";
 
-	for {
+        for {
 		if len(strings.TrimSpace(text)) > 0 {
 			reply, _ = bot.Reply(os.Getenv("USER"), text)
 
-			fmt.Println(reply)
+			n, err = fd.Write([]byte(reply))
+			if err != nil {
+				fmt.Println("unix socket write failed")
+				return
+			}
+
+			fd.Close()
 		}
 
-		text, _ = reader.ReadString('\n')
-		text = strings.TrimSpace(text)
+		fd, err := listener.Accept()
+		if err != nil {
+			fmt.Println("unix socket accept failed")
+			return
+		}
+
+		n, err := fd.Read(buf)
+		if err != nil {
+			fmt.Println("unix socket read failed")
+			return
+                }
+
+		text = strings.TrimSpace(string(buf[:n]))
 
 		if (len(text) > 0 && len(reply) > 0) {
 			args := []string{text, reply}
