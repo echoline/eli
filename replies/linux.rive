@@ -10,9 +10,21 @@
 + will linux run on my pc
 - Linux runs on almost all standard PC hardware, Intel, AMD, and ARM processors.
 
-+ how do i use the terminal
++ shell
 - Open the command-line interface to type text commands directly to the shell.
 - Type text commands here to run them in the shell.
+
++ terminal
+@ shell
+
++ what is (a|the) (shell|terminal)
+@ shell
+
++ how do i use (a|the) (shell|terminal)
+@ shell
+
++ how do i use this
+@ shell
 
 + commands
 - Tab-completion can help you complete command names in the shell - by pressing tab.
