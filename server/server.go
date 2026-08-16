@@ -129,15 +129,17 @@ func main() {
         for {
 		if len(strings.TrimSpace(text)) > 0 {
 			reply, _ = bot.Reply(os.Getenv("USER"), text)
-
-			n, err = fd.Write([]byte(reply))
-			if err != nil {
-				fmt.Println("unix socket write failed")
-				return
-			}
-
-			fd.Close()
+		} else {
+			reply = ""
 		}
+
+		n, err = fd.Write([]byte(reply))
+		if err != nil {
+			fmt.Println("unix socket write failed")
+			return
+		}
+
+		fd.Close()
 
 		fd, err := listener.Accept()
 		if err != nil {
