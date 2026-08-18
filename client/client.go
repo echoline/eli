@@ -6,7 +6,31 @@ import (
 	"os"
 	"net"
 	"time"
+	"strings"
 )
+
+func wrapText(text string, limit int) string {
+	words := strings.Fields(strings.TrimSpace(text))
+	if len(words) == 0 {
+		return ""
+	}
+
+	var result strings.Builder
+	result.WriteString(words[0])
+	spaceLeft := limit - len(words[0])
+
+	for _, word := range words[1:] {
+		if len(word)+1 > spaceLeft {
+			result.WriteString("\n" + word)
+			spaceLeft = limit - len(word)
+		} else {
+			result.WriteString(" " + word)
+			spaceLeft -= len(word) + 1
+		}
+	}
+
+	return result.String()
+}
 
 func main() {
 	reader := bufio.NewReader(os.Stdin)
@@ -32,6 +56,6 @@ func main() {
 		fmt.Println("error reading from unix socket: " + err.Error())
 	}
 
-	fmt.Println(string(buf[:n]))
+	fmt.Println(wrapText(string(buf[:n]), 80))
 }
 
