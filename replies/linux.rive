@@ -11,8 +11,8 @@
 - Linux runs on almost all standard PC hardware, Intel, AMD, and ARM processors.
 
 + shell
-- Open the command-line interface to type text commands directly to the shell.
-- Type text commands here to run them in the shell.
+- Open the command-line interface to type commands directly to the shell.
+- Type commands here to run them in the shell.
 
 + terminal
 @ shell
@@ -26,13 +26,37 @@
 + how do i use this
 @ shell
 
++ what do i do
+@ shell
+
++ how do i
+- It can be hard to learn everything. Just try commands. Learn by doing!
+
 + commands
 - Tab-completion can help you complete command names in the shell - by pressing tab.
 
 + what are the command names
 @ commands
 
-+ what are all [of] the commands
++ what are all [of] the command names
+@ commands
+
++ what are the [shell] [text] commands
+@ commands
+
++ what are all [of] the [shell] [text] commands
+@ commands
+
++ what are the program names
+@ commands
+
++ what are all [of] the program names
+@ commands
+
++ what are the programs
+@ commands
+
++ what are all [of] the programs
 @ commands
 
 + manual [page]
@@ -88,4 +112,25 @@
 
 + how much (ram|disk) [space] is (in|on) (this|the|my) (computer|system)
 @ <star>
+
++ top
+- Try typing "ps aux" or "top".
+
++ what (programs|commands) are [currently] (running|being run)
+@ top
+
++ what (programs|commands) are (running|being run) [right] now
+@ top
+
++ what is (running|being run)
+@ top
+
++ what is [currently] (running|being run)
+@ top
+
++ what is (running|being run) [right] now
+@ top
+
++ how do i (exit|quit|close) [out] [of] [from] top [*]
+- Just press "q".
 

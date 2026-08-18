@@ -109,7 +109,6 @@ func main() {
 		return
 	}
 
-
 	fd, err := listener.Accept()
 	if err != nil {
 		fmt.Println("unix socket accept failed")
@@ -147,7 +146,7 @@ func main() {
 			return
 		}
 
-		n, err := fd.Read(buf)
+		n, err = fd.Read(buf)
 		if err != nil {
 			fmt.Println("unix socket read failed")
 			return
