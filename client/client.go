@@ -16,13 +16,13 @@ func wrapText(text string, limit int) string {
 	}
 
 	var result strings.Builder
-	result.WriteString(words[0])
-	spaceLeft := limit - len(words[0])
+	result.WriteString("   " + words[0])
+	spaceLeft := limit - len(words[0]) - 3
 
 	for _, word := range words[1:] {
 		if len(word)+1 > spaceLeft {
-			result.WriteString("\n" + word)
-			spaceLeft = limit - len(word)
+			result.WriteString("\n " + word)
+			spaceLeft = limit - len(word) - 1
 		} else {
 			result.WriteString(" " + word)
 			spaceLeft -= len(word) + 1

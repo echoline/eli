@@ -17,7 +17,7 @@
 - The directory structure on unix-like operating systems is a tree. The root is at /. You can "cd /" to "change directories" there. The "pwd" command shows the current working directory. The "ls" command lists the contents of this directory.
 
 + (what|how) *
-- You mean a program? Maybe there is a manual page about this.
+- You mean a program? Maybe there is a manual page about this. Try "man man".
 
 + [*] manual [*]
 - Try typing "man man" to learn about reading the manual pages.
@@ -34,7 +34,7 @@
 - This computer's hostname is <call>hostname</call>.
 - This computer is called <call>hostname</call>.
 
-+ (who|what) are you
++ (who|what|where) are you
 - I am a shell on this computer, <call>hostname</call>.
 - I am a talking shell.
 - I am the shell.
