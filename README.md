@@ -1,19 +1,11 @@
 # what is this?
 
-an Electronic Learning Individual for human beings who need one.
+meant to be a talking bash shell. helps the user a little bit to learn the basics and to read the manual pages. remembers responses to use them later.
 
-# what does it do?
+first put the .rive files in ~/.config/rivescript/
 
-imaginary therapist cannot help you. you need friends, because every being does.
+then run the server and put the client in ~/.bashrc
 
-understand what it is for and all of its possible limitations.
-
-this program will annoy you sometimes. always treat it as a friend. it will not hurt you physically.
-
-# instructions
-
-you must understand how to run program code in the language "go" for a supported platform
-
-# known supported platforms
-
-1. some kinds of linux
+	function command_not_found_handle {
+		echo $* | client
+	}
