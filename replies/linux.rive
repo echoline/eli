@@ -11,8 +11,9 @@
 - Linux runs on almost all standard PC hardware, Intel, AMD, and ARM processors.
 
 + shell
-- Open the command-line interface to type commands directly to the shell.
+- You can open the command-line interface to type commands directly to the shell.
 - Type commands here to run them in the shell.
+- Type commands here. You can read manuals with the "man" command.
 
 + terminal
 @ shell
@@ -23,10 +24,13 @@
 + how do i use (a|the) (shell|terminal)
 @ shell
 
-+ how do i use this
++ how do i (use|do|operate|run|drive) this
 @ shell
 
 + what do i do
+@ shell
+
++ how do i use (you|it|this){weight=10}
 @ shell
 
 + how do i
@@ -39,6 +43,9 @@
 @ commands
 
 + what are the command names
+@ commands
+
++ what are the [text] commands [*]
 @ commands
 
 + what are all [of] the command names
@@ -56,7 +63,7 @@
 + what are all [of] the program names
 @ commands
 
-+ what are the programs
++ what are the programs [*]
 @ commands
 
 + what are all [of] the programs
@@ -74,11 +81,11 @@
 + what are the [basic] commands
 - Use "ls" to list files, "cd" to change folders, and "pwd" to see your current folder path.
 
-+ how do i exit *
++ how do i (close|exit|quit|stop) *
 - Sometimes a program can be cancelled by pressing ctrl+c, sometimes by pressing the escape key, or by typing :q.
 
 + ram
-- Try typing "free -m".
+- Try typing "free -m". See "man free".
 
 + how much ram do i have
 @ ram
@@ -102,7 +109,7 @@
 - A basic install needs about 20 GB of free space.
 
 + disk
-- Try typing "df -h".
+- Try typing "df -h". See "man df".
 
 + how much disk space do i have
 @ disk
@@ -117,7 +124,7 @@
 @ <star>
 
 + top
-- Try typing "ps aux" or "top".
+- Try typing "ps aux" or "top". See "man ps" or "man top".
 
 + what (programs|commands) are [currently] (running|being run)
 @ top
@@ -135,5 +142,26 @@
 @ top
 
 + how do i (exit|quit|close) [out] [of] [from] top [*]
-- Just press "q".
+- Just press "q". See "man top".
+
++ man
+- See "man man".
+
++ what is man
+@ man
+
++ what is the man [command]
+@ man
+
++ what is the man [program]
+@ man
+
++ run
+- If you don't find it in a menu, maybe it is a command here. You can press tab complete to list all of the commands, and use "man" to read manual pages.
+
++ (run|use) *
+@ run
+
++ how do i (run|use) *
+@ run
 

@@ -1,3 +1,32 @@
++ *
+- That's not a valid command.
+- I'm not much of a conversationalist.
+- I'm just a shell.
+- I'm not much for conversations.
+
++ [*] remember [*]
+- I do remember what you say to me to use as my own replies.
+
++ (is|are|were|will|when) *
+- I couldn't tell you.
+- I have no idea.
+- I don't know.
+- I don't know how to answer that. I'm just a shell.
+
++ where *
+- The directory structure on unix-like operating systems is a tree. The root is at /. You can "cd /" to "change directories" there. The "pwd" command shows the current working directory. The "ls" command lists the contents of this directory.
+
++ (what|how) *
+- You mean a program? Maybe there is a manual page about this.
+
++ [*] manual [*]
+- Try typing "man man" to learn about reading the manual pages.
+
++ (hello|hi|hey|howdy|hola|hai|yo) [*]
+- Hi.
+- Hello.
+- How do you do.
+
 + what is your (name|hostname|designation)
 - <call>hostname</call>.
 - My name is <call>hostname</call>.
