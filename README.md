@@ -2,6 +2,8 @@
 
 meant to be a talking bash shell. helps the user a little bit to learn the basics and to read the manual pages. remembers responses to use them later.
 
+![https://raw.githubusercontent.com/echoline/eli/refs/heads/main/scrn.png](https://raw.githubusercontent.com/echoline/eli/refs/heads/main/scrn.png)
+
 # build
 
 in client and server directories
